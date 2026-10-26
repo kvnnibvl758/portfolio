@@ -7,5 +7,5 @@ Portfolio de Naby CAMARA, développeur web & mobile et étudiant en Génie Infor
 Site statique (HTML/CSS/JS, sans framework), mode clair/sombre, adapté au mobile, hébergé sur Vercel.
 
 - `index.html` — la page
-- `img/` — photos et captures d'écran des projets
+- `img/` — photos
 - `cv-naby-camara.pdf` — CV

@@ -133,11 +133,6 @@ section{padding:72px 0;border-top:1px solid var(--line)}
 .proj-links a.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
 .proj-links a:hover{filter:brightness(1.08)}
 .proj-links small{display:block;width:100%;color:var(--muted);font-size:.78rem}
-.proj-shot{margin:0;background:var(--navy);aspect-ratio:16/9;overflow:hidden;display:flex;justify-content:center;position:relative}
-.proj-shot img{width:100%;height:100%;object-fit:cover;object-position:left top}
-.proj-shot.phone img{width:auto;object-fit:contain}
-.proj-shot figcaption{position:absolute;left:10px;bottom:10px;font-size:.7rem;font-weight:600;background:rgba(15,27,45,.85);color:#e9edf3;padding:4px 9px;border-radius:999px}
-.proj.feature .proj-shot{aspect-ratio:21/9}
 @media(min-width:760px){.proj.feature .proj-body{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}}
 
 /* cv */
@@ -296,7 +291,7 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke
 
 <section id="projets">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Projets</span><h2>Ce que j'ai construit</h2><p>Des applications conçues pour des besoins réels. Les projets clients ne sont pas encore livrés : ils seront présentés ici en captures d'écran.</p></div>
+    <div class="sec-head reveal"><span class="eyebrow">Projets</span><h2>Ce que j'ai construit</h2><p>Des applications conçues pour des besoins réels. Les projets clients ne sont pas encore livrés.</p></div>
     <div class="filters reveal">
       <button class="filter active" data-f="all">Tous</button>
       <button class="filter" data-f="app">Applications</button>
@@ -306,7 +301,6 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke
     <div class="projects">
 
       <article class="proj feature reveal" data-cat="app mobile">
-        <figure class="proj-shot phone"><img src="img/shot-commune.jpg" alt="Capture de l'écran d'accueil agent de Commune Connect" loading="lazy"><figcaption>Capture d'écran · espace agent</figcaption></figure>
         <div class="proj-top">
           <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div>
           <span class="status wip">En développement</span>
@@ -345,7 +339,6 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke
       </article>
 
       <article class="proj reveal" data-cat="site">
-        <figure class="proj-shot"><img src="img/shot-kagny.jpg" alt="Capture de la page d'accueil du site Kagny Technology" loading="lazy"><figcaption>Capture d'écran · page d'accueil</figcaption></figure>
         <div class="proj-top">
           <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
           <span class="status wip">Terminé · livraison à venir</span>
