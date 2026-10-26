@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naby CAMARA — Portfolio</title>
+<meta name="description" content="Portfolio de Naby CAMARA, développeur web & mobile à Conakry : Commune Connect, KagnyFIBER, sites Kagny Technology et Kadiak Communication.">
+<meta property="og:title" content="Naby CAMARA — Développeur web & mobile">
+<meta property="og:description" content="Applications web et mobiles conçues à Conakry, Guinée.">
+<meta property="og:image" content="img/naby.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f1b2d'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia' font-size='30' fill='%23e8a33d'>NC</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f3ee; --surface:#fffdf9; --ink:#141b26; --muted:#5d6675; --line:#e3ddd2;
+  --navy:#0f1b2d; --accent:#c9811f; --accent-soft:#f6e6cc; --on-navy:#e9edf3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b121d; --surface:#121b29; --ink:#eef1f6; --muted:#9aa5b5; --line:#223044;
+    --navy:#070c14; --accent:#e8a33d; --accent-soft:#2a2213; --on-navy:#e9edf3;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b121d; --surface:#121b29; --ink:#eef1f6; --muted:#9aa5b5; --line:#223044;
+  --navy:#070c14; --accent:#e8a33d; --accent-soft:#2a2213; --on-navy:#e9edf3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:1.15rem;text-decoration:none}
+.logo span{color:var(--accent)}
+.links{display:none;gap:26px;font-size:.92rem}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+@media(min-width:820px){.links{display:flex}}
+.nav-right{display:flex;gap:8px;align-items:center}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.menu-btn{display:grid}
+@media(min-width:820px){.menu-btn{display:none}}
+.drawer{display:none;flex-direction:column;padding:8px 16px 16px;border-bottom:1px solid var(--line)}
+.drawer.open{display:flex}
+.drawer a{padding:10px 0;text-decoration:none;border-bottom:1px solid var(--line)}
+
+/* hero */
+.hero{padding:56px 0 64px}
+.hero-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.25fr .75fr;gap:56px}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,7vw,4.4rem);margin:18px 0 18px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:1.08rem;color:var(--muted);max-width:56ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#1a1205}
+.btn:hover{transform:translateY(-1px)}
+.meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;font-size:.88rem;color:var(--muted)}
+.meta span{display:inline-flex;align-items:center;gap:6px}
+.portrait{position:relative;max-width:340px;margin:0 auto;width:100%}
+.portrait img{border-radius:22px;aspect-ratio:395/479;object-fit:cover;width:100%;position:relative;z-index:1}
+.portrait::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--accent);border-radius:22px}
+.badge{position:absolute;z-index:2;left:-12px;bottom:28px;background:var(--navy);color:var(--on-navy);padding:10px 14px;border-radius:12px;font-size:.8rem;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.badge b{display:block;color:#e8a33d;font-size:1.2rem;font-family:Fraunces,serif}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:36px}
+.sec-head h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-top:12px}
+.sec-head p{color:var(--muted);margin-top:10px;max-width:60ch}
+
+.about-grid{display:grid;gap:32px}
+@media(min-width:860px){.about-grid{grid-template-columns:.8fr 1.2fr;align-items:start}}
+.about-photo img{border-radius:18px;aspect-ratio:4/5;object-fit:cover;object-position:top;width:100%}
+.about-text p{margin-bottom:16px;color:var(--muted)}
+.about-text p strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat b{font-family:Fraunces,serif;font-size:1.8rem;color:var(--accent);display:block;line-height:1}
+.stat span{font-size:.8rem;color:var(--muted)}
+
+/* timeline */
+.tl{display:grid;gap:16px}
+@media(min-width:860px){.tl{grid-template-columns:1fr 1fr}}
+.tl-col h3{font-size:1.1rem;margin-bottom:14px;color:var(--muted);font-family:Inter,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem}
+.item{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.item .date{font-size:.8rem;font-weight:600;color:var(--accent)}
+.item h4{font-size:1.05rem;margin:4px 0 2px}
+.item .org{font-size:.9rem;color:var(--muted)}
+.item ul{margin:10px 0 0 18px;color:var(--muted);font-size:.92rem}
+
+/* skills */
+.skills{display:grid;gap:14px}
+@media(min-width:720px){.skills{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.skills{grid-template-columns:repeat(5,1fr)}}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.skill h4{font-size:1rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.78rem;padding:5px 10px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filter{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font:inherit;font-size:.88rem;cursor:pointer}
+.filter.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.projects{display:grid;gap:18px}
+@media(min-width:760px){.projects{grid-template-columns:repeat(2,1fr)}}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.proj.feature{grid-column:1/-1}
+.proj-top{padding:22px 22px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.proj-ico{width:46px;height:46px;border-radius:12px;background:var(--navy);color:#e8a33d;display:grid;place-items:center;flex:none}
+.status{font-size:.74rem;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.status.live{background:#dcf3e4;color:#1d6b3a}
+.status.wip{background:var(--accent-soft);color:var(--accent)}
+.status.idea{background:var(--line);color:var(--muted)}
+.proj-body{padding:16px 22px 22px;flex:1;display:flex;flex-direction:column}
+.proj h3{font-size:1.35rem}
+.proj .ctx{font-size:.85rem;color:var(--accent);font-weight:600;margin:4px 0 10px}
+.proj p{color:var(--muted);font-size:.95rem}
+.proj ul{margin:12px 0 0 18px;color:var(--muted);font-size:.9rem}
+.proj .chips{margin-top:16px}
+.proj-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.proj-links a{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:#1a1205;background:var(--accent);padding:9px 16px;border-radius:10px;text-decoration:none}
+.proj-links a.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.proj-links a:hover{filter:brightness(1.08)}
+.proj-links small{display:block;width:100%;color:var(--muted);font-size:.78rem}
+.proj-shot{margin:0;background:var(--navy);aspect-ratio:16/9;overflow:hidden;display:flex;justify-content:center;position:relative}
+.proj-shot img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.proj-shot.phone img{width:auto;object-fit:contain}
+.proj-shot figcaption{position:absolute;left:10px;bottom:10px;font-size:.7rem;font-weight:600;background:rgba(15,27,45,.85);color:#e9edf3;padding:4px 9px;border-radius:999px}
+.proj.feature .proj-shot{aspect-ratio:21/9}
+@media(min-width:760px){.proj.feature .proj-body{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}}
+
+/* cv */
+.cv-box{display:grid;gap:24px;background:var(--navy);color:var(--on-navy);border-radius:22px;padding:28px}
+@media(min-width:860px){.cv-box{grid-template-columns:1fr 1.1fr;padding:40px;align-items:center}}
+.cv-box h2{font-size:clamp(1.8rem,4vw,2.4rem);color:#fff}
+.cv-box p{color:#b9c4d3;margin:12px 0 22px}
+.cv-box .btn{background:transparent;color:#fff;border-color:#2b3b55}
+.cv-box .btn.primary{background:#e8a33d;color:#1a1205;border-color:#e8a33d}
+.cv-frame{background:#fff;border-radius:14px;overflow:hidden;aspect-ratio:210/297;width:100%;max-height:560px}
+.cv-frame iframe{width:100%;height:100%;border:0}
+.cv-frame a{display:block}
+
+.cv-mini{display:grid;grid-template-columns:34% 1fr;background:#fff;border-radius:14px;overflow:hidden;aspect-ratio:210/297;max-height:520px;width:100%;max-width:380px;margin:0 auto;text-decoration:none;box-shadow:0 20px 50px rgba(0,0,0,.35);transition:transform .3s}
+.cv-mini:hover{transform:translateY(-4px) rotate(-1deg)}
+.cv-mini-side{background:#0f1b2d;padding:14px 10px;display:flex;flex-direction:column;gap:6px}
+.cv-mini-side img{width:100%;border-radius:4px;border-bottom:3px solid #e8a33d;margin-bottom:8px}
+.cv-mini span{font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e8a33d;margin-top:8px}
+.cv-mini i{display:block;height:5px;border-radius:3px;background:#3a4a63}
+.cv-mini-main{padding:18px 14px;display:flex;flex-direction:column;gap:6px}
+.cv-mini-main b{font-family:Fraunces,serif;font-size:1.15rem;color:#141b26}
+.cv-mini-main em{font-style:normal;font-size:.62rem;color:#c9811f;font-weight:600}
+.cv-mini-main i{background:#e6e1d8}
+.cv-mini i.s{width:65%}
+/* contact */
+.contact{display:grid;gap:14px}
+@media(min-width:760px){.contact{grid-template-columns:repeat(2,1fr)}}
+.c-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;text-decoration:none;display:block;word-break:break-word}
+.c-card:hover{border-color:var(--accent)}
+.c-card small{display:block;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.c-card b{font-size:1rem}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Naby<span>.</span>CAMARA</a>
+    <nav class="links">
+      <a href="#apropos">À propos</a><a href="#parcours">Parcours</a><a href="#competences">Compétences</a><a href="#projets">Projets</a><a href="#cv">CV</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="theme" aria-label="Changer de thème"><svg class="i" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Menu"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer" id="drawer">
+    <a href="#apropos">À propos</a><a href="#parcours">Parcours</a><a href="#competences">Compétences</a><a href="#projets">Projets</a><a href="#cv">CV</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Développeur web & mobile · Conakry</span>
+      <h1>Je construis des applications <em>utiles</em> pour la Guinée.</h1>
+      <p class="lead">Je m'appelle Naby CAMARA, étudiant en Génie Informatique. De la base de données à l'écran, je conçois des outils concrets : gestion municipale, supervision de réseau fibre, sites d'entreprise.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projets">Voir mes projets <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn" href="cv-naby-camara.pdf" download><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> Télécharger mon CV</a>
+      </div>
+      <div class="meta">
+        <span><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Kipé, Conakry</span>
+        <span><svg class="i" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Stagiaire chez Kagny Technology</span>
+        <span><svg class="i" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>L4 Génie Informatique</span>
+      </div>
+    </div>
+    <div class="portrait reveal">
+      <img src="img/naby.jpg" alt="Portrait de Naby CAMARA en costume bleu" width="395" height="479">
+      <div class="badge"><b>5</b>projets réalisés</div>
+    </div>
+  </div>
+</div>
+
+<section id="apropos">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal"><img src="img/naby-2.jpg" alt="Naby CAMARA en chemise rose et casquette" loading="lazy"></div>
+    <div class="about-text reveal">
+      <span class="eyebrow">À propos</span>
+      <div class="sec-head" style="margin-bottom:20px"><h2>Un développeur qui part du terrain.</h2></div>
+      <p>J'ai terminé ma <strong>Licence 3 professionnelle en Génie Informatique</strong> à l'Université Mercure International de Guinée et je poursuis en <strong>Licence 4 à l'UGANC</strong>.</p>
+      <p>En parallèle, j'effectue un stage chez <strong>Kagny Technology</strong>, que j'ai choisi de ma propre initiative : d'abord au service Commercial, puis au Développement et au NOC. J'y ai conçu KagnyFIBER, un outil de gestion du réseau fibre de l'entreprise.</p>
+      <p>Ce qui me motive : partir d'un vrai besoin local — une commune, un fournisseur d'accès, une agence — et livrer une application qui fonctionne. Mon prochain cap : la <strong>science des données</strong> et l'intelligence artificielle.</p>
+      <div class="stats">
+        <div class="stat"><b>5</b><span>projets réalisés</span></div>
+        <div class="stat"><b>2</b><span>apps perso</span></div>
+        <div class="stat"><b>3</b><span>services en stage</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="parcours">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Parcours</span><h2>Formation & expérience</h2></div>
+    <div class="tl">
+      <div class="tl-col reveal">
+        <h3>Expérience</h3>
+        <div class="item">
+          <div class="date">17 août – 17 novembre 2026</div>
+          <h4>Stagiaire — Kagny Technology</h4>
+          <div class="org">Fournisseur d'accès Internet & services IT, Conakry</div>
+          <ul>
+            <li>Service Commercial (2 semaines), puis Développement et NOC</li>
+            <li>Conception de KagnyFIBER, plateforme de gestion du réseau FTTH</li>
+            <li>Conception du nouveau site web bilingue de l'entreprise</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="date">2026</div>
+          <h4>Développeur indépendant</h4>
+          <div class="org">Projets pour clients et institutions</div>
+          <ul>
+            <li>Commune Connect pour la Garde communale (en développement)</li>
+            <li>Site vitrine de Kadiak Communication (en cours)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-col reveal">
+        <h3>Formation</h3>
+        <div class="item">
+          <div class="date">En cours · 2026 – 2027</div>
+          <h4>Licence 4 — Génie Informatique</h4>
+          <div class="org">Université Gamal Abdel Nasser de Conakry (UGANC)</div>
+        </div>
+        <div class="item">
+          <div class="date">Diplômé en 2026</div>
+          <h4>Licence 3 professionnelle — Génie Informatique</h4>
+          <div class="org">Université Mercure International de Guinée</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="competences">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Compétences</span><h2>Ma boîte à outils</h2></div>
+    <div class="skills">
+      <div class="skill reveal"><h4>Front-end</h4><div class="chips"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind CSS</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div></div>
+      <div class="skill reveal"><h4>Back-end & données</h4><div class="chips"><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">RLS</span><span class="chip">Temps réel</span><span class="chip">Python</span></div></div>
+      <div class="skill reveal"><h4>Mobile</h4><div class="chips"><span class="chip">React Native</span><span class="chip">Capacitor</span><span class="chip">WebAuthn</span><span class="chip">Géolocalisation</span></div></div>
+      <div class="skill reveal"><h4>Outils & réseau</h4><div class="chips"><span class="chip">Git / GitHub</span><span class="chip">Netlify</span><span class="chip">Vercel</span><span class="chip">Leaflet</span><span class="chip">FTTH</span><span class="chip">NOC</span></div></div>
+      <div class="skill reveal"><h4>Langues</h4><div class="chips"><span class="chip">Français — courant</span><span class="chip">Soussou</span><span class="chip">Anglais — intermédiaire</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projets">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Projets</span><h2>Ce que j'ai construit</h2><p>Des applications conçues pour des besoins réels. Les projets clients ne sont pas encore livrés : ils seront présentés ici en captures d'écran.</p></div>
+    <div class="filters reveal">
+      <button class="filter active" data-f="all">Tous</button>
+      <button class="filter" data-f="app">Applications</button>
+      <button class="filter" data-f="site">Sites web</button>
+      <button class="filter" data-f="mobile">Mobile</button>
+    </div>
+    <div class="projects">
+
+      <article class="proj feature reveal" data-cat="app mobile">
+        <figure class="proj-shot phone"><img src="img/shot-commune.jpg" alt="Capture de l'écran d'accueil agent de Commune Connect" loading="lazy"><figcaption>Capture d'écran · espace agent</figcaption></figure>
+        <div class="proj-top">
+          <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div>
+          <span class="status wip">En développement</span>
+        </div>
+        <div class="proj-body">
+          <div>
+            <h3>Commune Connect</h3>
+            <div class="ctx">Plateforme municipale · Garde communale de Conakry</div>
+            <p>Application multi-rôles pour gérer et suivre les interventions de la Garde communale : agents de terrain, chefs de brigade, responsables HSE et vice-maire/maire.</p>
+            <div class="chips"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind</span><span class="chip">Supabase</span><span class="chip">Capacitor</span></div>
+          </div>
+          <div>
+            <ul>
+              <li>11 modules : rapports, incidents, stationnement, patrouilles, équipements, présence, statistiques, carte…</li>
+              <li>Architecture multi-communes, vraie authentification et connexion biométrique</li>
+              <li>Messagerie en temps réel et météo locale</li>
+              <li>Version web et application mobile native</li>
+              <li>Présentation prévue auprès des communes</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj reveal" data-cat="app">
+        <div class="proj-top">
+          <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></div>
+          <span class="status wip">Terminé · en attente de validation</span>
+        </div>
+        <div class="proj-body">
+          <h3>KagnyFIBER</h3>
+          <div class="ctx">Réseau fibre optique · Kagny Technology</div>
+          <p>Plateforme de gestion et supervision du réseau FTTH & Backhaul : clients raccordés, splitters, points de soudure, switches et ports, sites techniques sur carte interactive de Conakry.</p>
+          <ul><li>Capture GPS sur le terrain</li><li>Export CSV / Excel de toutes les tables</li><li>Rôles administrateur et technicien</li></ul>
+          <div class="chips"><span class="chip">JavaScript</span><span class="chip">Leaflet</span><span class="chip">Supabase</span></div>
+        </div>
+      </article>
+
+      <article class="proj reveal" data-cat="site">
+        <figure class="proj-shot"><img src="img/shot-kagny.jpg" alt="Capture de la page d'accueil du site Kagny Technology" loading="lazy"><figcaption>Capture d'écran · page d'accueil</figcaption></figure>
+        <div class="proj-top">
+          <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+          <span class="status wip">Terminé · livraison à venir</span>
+        </div>
+        <div class="proj-body">
+          <h3>Site Kagny Technology</h3>
+          <div class="ctx">Site d'entreprise · FAI & services IT</div>
+          <p>Site vitrine bilingue français/anglais de 14 pages : offres, services, boutique, carrière, contact, avec chatbot et espace d'administration pour modifier textes et photos.</p>
+          <div class="chips"><span class="chip">HTML/CSS/JS</span><span class="chip">Python</span><span class="chip">Supabase</span><span class="chip">FR / EN</span></div>
+        </div>
+      </article>
+
+      <article class="proj reveal" data-cat="site">
+        <div class="proj-top">
+          <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h6M8 11h6"/></svg></div>
+          <span class="status wip">En cours</span>
+        </div>
+        <div class="proj-body">
+          <h3>Site Kadiak Communication</h3>
+          <div class="ctx">Agence de communication culturelle</div>
+          <p>Site multi-pages en cours de réalisation pour une agence fondée par une journaliste et autrice : réalisations, événements culturels, actualités, avec version anglaise et recherche interne.</p>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Python</span></div>
+        </div>
+      </article>
+
+      <article class="proj reveal" data-cat="app">
+        <div class="proj-top">
+          <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4"/></svg></div>
+          <span class="status live">Projet personnel</span>
+        </div>
+        <div class="proj-body">
+          <h3>Application de caisse (POS)</h3>
+          <div class="ctx">Point de vente pour commerces</div>
+          <p>Application web de caisse pour gérer produits, ventes et stocks d'une boutique, avec création de compte et espace de caisse personnel.</p>
+          <div class="chips"><span class="chip">JavaScript</span><span class="chip">Supabase</span><span class="chip">Netlify</span></div>
+        </div>
+      </article>
+
+      <article class="proj reveal" data-cat="mobile">
+        <div class="proj-top">
+          <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M2 14a4 4 0 0 1 4 4M2 10a8 8 0 0 1 8 8"/></svg></div>
+          <span class="status wip">Android</span>
+        </div>
+        <div class="proj-body">
+          <h3>Cast TV</h3>
+          <div class="ctx">Application mobile personnelle</div>
+          <p>Application gratuite pour envoyer des contenus vers une TV, façon Chromecast, avec un bouton de recopie de l'écran du téléphone.</p>
+          <div class="chips"><span class="chip">React Native</span><span class="chip">Android</span></div>
+          <div class="proj-links"><a class="ghost" href="https://github.com/kvnnibvl758/cast-tv-app" target="_blank" rel="noopener">Télécharger / voir le code ↗</a></div>
+        </div>
+      </article>
+
+      <article class="proj reveal" data-cat="app">
+        <div class="proj-top">
+          <div class="proj-ico"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div>
+          <span class="status idea">Idée</span>
+        </div>
+        <div class="proj-body">
+          <h3>IA immobilier & adressage</h3>
+          <div class="ctx">Projet personnel · Guinée</div>
+          <p>Une IA pour chercher un logement en Guinée, couplée à une carte où chaque maison reçoit un code postal et un identifiant pour faciliter les livraisons.</p>
+          <div class="chips"><span class="chip">IA</span><span class="chip">Cartographie</span><span class="chip">Données</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap">
+    <div class="cv-box reveal">
+      <div>
+        <span class="eyebrow">Curriculum vitae</span>
+        <h2 style="margin-top:12px">Mon CV en un coup d'œil</h2>
+        <p>Formation, expérience chez Kagny Technology, compétences techniques et projets principaux, sur une page.</p>
+        <div class="cta" style="margin-top:0">
+          <a class="btn primary" href="cv-naby-camara.pdf" download><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> Télécharger (PDF)</a>
+          <a class="btn" href="cv-naby-camara.pdf" target="_blank" rel="noopener">Ouvrir</a>
+        </div>
+      </div>
+      <a class="cv-mini" href="cv-naby-camara.pdf" target="_blank" rel="noopener">
+        <div class="cv-mini-side"><img src="img/naby.jpg" alt=""><span>Contact</span><i></i><i></i><span>Compétences</span><i></i><i></i><i></i></div>
+        <div class="cv-mini-main"><b>Naby CAMARA</b><em>Développeur web & mobile</em><span>Expérience</span><i></i><i class="s"></i><span>Formation</span><i></i><i class="s"></i><span>Projets</span><i></i><i></i><i class="s"></i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Contact</span><h2>Travaillons ensemble.</h2><p>Un projet d'application, un site ou une opportunité de stage ? Écrivez-moi.</p></div>
+    <div class="contact">
+      <a class="c-card reveal" href="tel:+224626447997"><small>Téléphone</small><b>+224 626 44 79 97</b></a>
+      <a class="c-card reveal" href="mailto:cmaranaby758@gmail.com"><small>E-mail</small><b>cmaranaby758@gmail.com</b></a>
+      <a class="c-card reveal" href="https://github.com/kvnnibvl758" target="_blank" rel="noopener"><small>GitHub</small><b>github.com/kvnnibvl758</b></a>
+      <div class="c-card reveal"><small>Localisation</small><b>Kipé, Conakry — Guinée</b></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Naby CAMARA</span><span>Conçu et développé à Conakry</span></div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, t=null;
+  try{t=localStorage.getItem('theme')}catch(e){}
+  if(t) root.setAttribute('data-theme',t);
+  document.getElementById('theme').onclick=function(){
+    var dark = root.getAttribute('data-theme')==='dark' || (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var n = dark?'light':'dark'; root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  };
+  var d=document.getElementById('drawer');
+  document.getElementById('menu').onclick=function(){d.classList.toggle('open')};
+  d.querySelectorAll('a').forEach(function(a){a.onclick=function(){d.classList.remove('open')}});
+  document.querySelectorAll('.filter').forEach(function(b){
+    b.onclick=function(){
+      document.querySelectorAll('.filter').forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active'); var f=b.dataset.f;
+      document.querySelectorAll('.proj').forEach(function(p){
+        p.style.display = (f==='all' || p.dataset.cat.split(' ').indexOf(f)>-1) ? '' : 'none';
+      });
+    };
+  });
+  var io='IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12}) : null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
